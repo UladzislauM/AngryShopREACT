@@ -1,13 +1,14 @@
-import React from "react"
-import Header from "./components/Header";
+import React from "react";
 import Footer from "./components/Footer";
+import Header from "./components/Header";
 import Items from "./components/Items";
- 
+
 class App extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
-      items:[
+      orders: [],
+      items: [
         {
           id: 1,
           title: 'Rostela Melodia 50x60',
@@ -26,16 +27,27 @@ class App extends React.Component {
         }
       ]
     }
+    this.addToOrder = this.addToOrder.bind(this);
   }
-    render(){
-      return (
+  render() {
+    return (
       <div className="wrapper">
-        <Header />
-        <Items items={this.state.items} />
+        <Header orders={this.state.orders} />
+        <Items items={this.state.items} onAdd={this.addToOrder} />
         <Footer />
       </div>
-  );
- }
+    );
+  }
+
+  addToOrder(item) {
+    let isArray = false
+    this.state.orders.forEach(el => {
+      if (el.id === item.id)
+        isArray = true
+    })
+    if (!isArray)
+      this.setState({ orders: [...this.state.orders, item] })
+  }
 }
 
 export default App;
