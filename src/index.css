@@ -17,25 +17,54 @@ body {
     margin: 50 auto;
 }
 
+header {
+    position: relative;
+}
+
 header .logo {
     font-weight: 600;
     font-size: 20px;
 }
 
-head ul.nav {
+header ul.nav {
     float: right;
     font-size: 20px;
 }
 
 header ul.nav li {
     display: inline;
-    margin-left: 25 px;
+    margin-left: 20px;
     cursor: pointer;
     transition: opacity 500ms ease;
 }
 
 header ul.nav li.hover {
     opacity: 0.5;
+}
+
+header .shop-cart-button {
+    float: right;
+    cursor: pointer;
+    transition: color, transform 500ms ease;
+
+}
+
+header .shop-cart-button:hover,
+header .shop-cart-button.active {
+    color: #dc3d3d;
+    transform: scale(1.3);
+}
+
+header .shop-cart {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 450px;
+    min-height: 100px;
+    background: #b4b6bb;
+    -webkit-box-shadow: 10px 9px 18px -5px rgba(0,0,0,0.7); 
+    box-shadow: 10px 9px 18px -5px rgba(0,0,0,0.7);
+    z-index: 1000;
 }
 
 header .presentation {
