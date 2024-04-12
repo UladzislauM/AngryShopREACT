@@ -60,7 +60,7 @@ header .shop-cart {
     top: 30px;
     right: 0;
     width: 450px;
-    background: #b4b6bb;
+    background: #ececee;
     -webkit-box-shadow: 10px 9px 18px -5px rgba(0,0,0,0.7); 
     box-shadow: 10px 9px 18px -5px rgba(0,0,0,0.7);
     z-index: 1000;
@@ -94,6 +94,28 @@ header .shop-cart .item h2 {
 header .shop-cart .item p {
     color: gray;
     font-weight: 600;
+}
+
+header .shop-cart .item .delete-icon {
+    color: #ca5252;
+    float: right;
+    position: relative;
+    top: -25;
+    cursor: pointer;
+    transition: color, transform 500ms ease;
+}
+
+header .shop-cart .item .delete-icon:hover {
+    color: #e90000;
+    transform: scale(1.3);
+}
+
+header .shop-cart .total {
+    float: left;
+    width: 100%;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 20px;
 }
 
 header .presentation {
